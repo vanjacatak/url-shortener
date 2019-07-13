@@ -16,7 +16,7 @@ public class ShortUrl {
 
     public void generateShortUrl() {
         if (this.shortUrl == null)
-            this.shortUrl = RandomStringGenerator.generateShortUrl();
+            this.shortUrl = "/short/" + RandomStringGenerator.generateShortUrl();
     }
 
     private String longUrl;

@@ -47,9 +47,11 @@ public class ShortUrlController {
                     String path = httpServletRequest
                             .getRequestURL()
                             .toString()
-                            .replaceFirst(httpServletRequest.getRequestURI(), "");
+                            .replaceFirst("/register", "");
 
-                    response.put("shortUrl", path + "/" + shortUrl.getShortUrl());
+                    response.put("shortUrl", path + shortUrl.getShortUrl());
+                    System.out.println(path);
+                    System.out.println(shortUrl.getShortUrl());
 
                     return response;
 
