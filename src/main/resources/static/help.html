@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Url shortening help</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+
+    <div>
+        <h1>1. Registracija </h1>
+
+        <h2>URI - /account</h2>
+
+        <p>Za registraciju je potrebno poslati POST request koji mora sadržavati 'AccountId' parametar.</p>
+        <p>Ukoliko je registracija uspješna, servis će vratiti generirani password za registrirani account.</p>
+
+        <h1>2. Registracija URL-ova</h1>
+
+        <h2>URI - /register</h2>
+
+        <p>Ovaj endpoint koristi Basic Authentication,
+            te je u requestu potrebno postavit Authorization header sa username(AccountID) i password(generirani password) </p>
+        <p>Za registraciju URL-a, potrebno je poslati POST request koji mora sadržavati 'URL' parametar, a može sadržavati i
+            'redirectType' parametar (Default value je 302)</p>
+        <p>Ukoliko je registracija uspješna, servis će vratiti generirani (kratki )URL sa {shortKey} koji redirekta na registrirani URL.</p>
+        <p> Primjer: http://localhost:8080/short/Yzrzb - gdje 'Yzrzb' vrijednost predstavlja {shortKey}</p>
+
+        <h1>3. Statistika accounta</h1>
+
+        <h2>URI - /statistic/{AccountId} </h2>
+
+        <p>Ovaj endpoint koristi Basic Authentication,
+            te je u requestu potrebno postavit Authorization header sa username(AccountID) i password(generirani password) </p>
+        <p>Ukoliko je registracija uspješna,
+            servis će vratiti popis svih registriranih URL-ova koje je korisnik registrirao, te broj posjeta istih</p>
+
+        <h1>4. Redirekt klijenata</h1>
+
+        <h2>URI - /short/{shortKey} </h2>
+
+        <p>Get request na ovaj URI vrši redirekt klijenta na prethodno registrirani URL</p>
+
+    </div>
+
+</body>
+</html>
