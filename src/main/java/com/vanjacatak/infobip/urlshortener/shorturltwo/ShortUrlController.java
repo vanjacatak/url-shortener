@@ -49,9 +49,7 @@ public class ShortUrlController {
                             .toString()
                             .replaceFirst("/register", "");
 
-                    response.put("shortUrl", path + shortUrl.getShortUrl());
-                    System.out.println(path);
-                    System.out.println(shortUrl.getShortUrl());
+                    response.put("shortUrl", path + "/short/" + shortUrl.getShortUrl());
 
                     return response;
 
