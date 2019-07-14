@@ -74,7 +74,7 @@ public class ShortUrlController {
         if (shortUrl != null) {
 
             shortUrl.setNumberOfHits(shortUrl.getNumberOfHits() + 1);
-            response.setStatus(HttpServletResponse.SC_MOVED_PERMANENTLY);
+            response.setStatus(shortUrl.getRedirectType());
             response.setHeader("Location", shortUrl.getLongUrl());
 
         } else
